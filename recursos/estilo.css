@@ -1,0 +1,108 @@
+/* Un Tinto y un Bit — estilo de la web. Sin recursos externos: letra y logo viven en esta carpeta. */
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("JetBrainsMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("JetBrainsMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --cafe-centro: #584232;
+  --cafe-borde: #2e221a;
+  --crema: #f3ece0;
+  --crema-suave: rgba(243, 236, 224, 0.72);
+  --caramelo: #d9a066;
+  --linea: rgba(243, 236, 224, 0.16);
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--cafe-borde); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 30%, var(--cafe-centro) 0%, var(--cafe-borde) 75%) fixed;
+  color: var(--crema);
+  font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a { color: var(--caramelo); }
+a:hover { color: var(--crema); }
+
+.cabecera {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.marca {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--crema);
+}
+.cursor { color: var(--caramelo); }
+.cabecera nav { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 8px 16px 48px;
+}
+
+/* Portada */
+.portada { text-align: center; padding-top: 16px; }
+.portada img { width: min(320px, 80vw); height: auto; display: block; margin: 0 auto; }
+.portada h1 { font-size: clamp(28px, 7vw, 44px); line-height: 1.15; margin: 8px 0 12px; }
+.lema { color: var(--crema-suave); margin: 0 0 4px; }
+.redes {
+  list-style: none;
+  padding: 0;
+  margin: 32px auto 0;
+  display: grid;
+  gap: 12px;
+  max-width: 360px;
+}
+.redes a {
+  display: block;
+  padding: 12px 16px;
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--crema);
+  text-align: left;
+}
+.redes a:hover { border-color: var(--caramelo); }
+.redes span { color: var(--caramelo); }
+
+/* Páginas de texto */
+.texto h1 { font-size: clamp(22px, 5vw, 30px); line-height: 1.25; margin: 16px 0 4px; }
+.fecha { color: var(--crema-suave); margin-top: 0; }
+.texto ol { padding-left: 1.4em; }
+.texto li { margin-bottom: 12px; }
+.texto ul { padding-left: 1.2em; margin-top: 8px; }
+.texto ul li { margin-bottom: 6px; }
+
+.pie {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--linea);
+  font-size: 13px;
+  color: var(--crema-suave);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
